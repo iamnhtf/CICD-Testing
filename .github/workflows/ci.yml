@@ -1,31 +1,33 @@
 name: Run React Tests
 
+# Chạy CI khi push hoặc mở pull request trên nhánh main
 on:
   push:
     branches:
-      - master
       - main
   pull_request:
+    branches:
+      - main
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout code
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Cài Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
+      # Cài dependencies
       - name: Install dependencies
-        run: |
-          cd cicdtesting
-          npm install
+        run: npm install
 
+      # Chạy unit tests
       - name: Run tests
-        run: |
-          cd cicdtesting
-          npm test -- --watchAll=false
+        run: npm test -- --watchAll=false --ci
