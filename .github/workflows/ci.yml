@@ -30,4 +30,4 @@ jobs:
 
       # Chạy unit tests
       - name: Run tests
-        run: npm test -- --watchAll=false --ci
+        run: npm test

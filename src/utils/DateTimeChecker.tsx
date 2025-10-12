@@ -27,7 +27,6 @@ export const validateDate = (dateStr: string): string | null => {
   return null;
 };
 
-
 const DateTimeChecker = () => {
   const [date, setDate] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
