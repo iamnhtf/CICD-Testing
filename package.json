@@ -15,7 +15,8 @@
     "web-vitals": "^2.1.4"
   },
   "overrides": {
-    "@types/node": "^18.0.0"
+    "@types/node": "^18.0.0",
+    "jsdom": "22.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
