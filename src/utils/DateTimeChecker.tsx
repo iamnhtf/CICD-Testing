@@ -3,7 +3,7 @@ import './DateTimeChecker.css';
 
 export const validateDate = (dateStr: string): string | null => {
   if (!dateStr) {
-    return "Date field ";
+    return "Date field cannot be empty.";
   }
 
   const [year, month, day] = dateStr.split('-').map(Number);
